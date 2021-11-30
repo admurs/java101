@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+        double fiyat, kdv,kdvliFiyat,kdvTutar;
+
+        System.out.print("Ürün fiyat giriniz: ");
+        fiyat=input.nextDouble();
+        boolean kdvKontrol=(fiyat>0&&fiyat<1000);
+        kdv=kdvKontrol?0.18:0.08;
+        kdvTutar=fiyat*kdv;
+        kdvliFiyat=fiyat+kdvTutar;
+        System.out.println("Ürün fiyatı: "+fiyat+" Kdvsi: "+kdvTutar+" Kdvli ürün fiyatı: "+kdvliFiyat);
+
+    }
+}
