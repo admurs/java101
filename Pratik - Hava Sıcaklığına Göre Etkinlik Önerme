@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int sicaklık,sicaklık2;
+
+        System.out.println("if-else ile");
+        System.out.print("Sıcaklık gir: ");
+        sicaklık=scan.nextInt();
+
+        if (sicaklık<5)
+            System.out.print("Kayak");
+        else if(sicaklık<15)
+            System.out.print("Sinema");
+        else if(sicaklık<25)
+            System.out.print("Piknik");
+        else
+            System.out.print("Yüzme");
+
+        System.out.println("\nboolean ile");
+        System.out.print("Sıcaklık gir: ");
+        sicaklık2=scan.nextInt();
+
+        boolean kosul1=sicaklık2<5;
+        boolean kosul2=sicaklık2>5&&sicaklık2<15;
+        boolean kosul3=sicaklık2>15&&sicaklık2<25;
+
+        String durum=kosul1?"Kayak":
+                     kosul2?"Sinema":
+                     kosul3?"Piknik":"Yüzme";
+
+        System.out.print(durum);
+    }
+}
+
