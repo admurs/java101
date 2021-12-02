@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        String kullanici,sifre,yeniSifre,secim;;
+
+        System.out.print("Kullanıcı adı gir: ");
+        kullanici=scan.nextLine();
+        System.out.print("Şifre gir: ");
+        sifre=scan.nextLine();
+
+        if (kullanici.equals("admurs")&&sifre.equals("123"))
+            System.out.print("Giriş Başarılı");
+        else {
+            System.out.print("Şifre hatalı.\nŞifre sıfırlamak istermisiniz? E/H: ");
+            secim=scan.nextLine();
+            switch (secim){
+                case "E":
+                    System.out.print("Yeni şifre: ");
+                    yeniSifre=scan.nextLine();
+                    if (yeniSifre.equals(sifre)||yeniSifre.equals("123"))
+                        System.out.println("Şifre oluşturulamadı, lütfen başka şifre giriniz.");
+                    else
+                        System.out.print("Şifre oluşturulmuştur.");
+                    break;
+                case "H":
+                    System.out.print("Yeni şifre oluşturma iptal edilmiştir.");
+                    break;
+                default:
+                    System.out.print("Hatalı seçim yapılmıştır.");
+                    break;
+            }
+        }
+    }
+}
+
