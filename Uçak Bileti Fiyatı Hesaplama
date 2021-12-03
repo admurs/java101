@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int km, yas, tip;
+        double tutar,topTutar, indTutar, indYas,indGidisDonus;
+
+        System.out.print("Mesafe km olarak gir: ");
+        km = scan.nextInt();
+        System.out.print("Yaş gir: ");
+        yas = scan.nextInt();
+        System.out.print("Yolculuk tipi seç(1-Tek Yön,2-Gidiş Dönüş): ");
+        tip = scan.nextInt();
+
+        if (km > 0 && yas > 0 && (tip == 1 || tip == 2)) {
+            tutar = km * 0.10;
+            if (yas < 12) {
+                indYas=tutar*0.50;
+                indTutar=tutar-indYas;
+                indGidisDonus= tip==2?indTutar*0.20:0;
+                topTutar=(indTutar-indGidisDonus)*tip;
+                System.out.print("Toplam tutar: "+topTutar);
+            }
+            else if (yas<24){
+                indYas=tutar*0.10;
+                indTutar=tutar-indYas;
+                indGidisDonus= tip==2?indTutar*0.20:0;
+                topTutar=(indTutar-indGidisDonus)*tip;
+                System.out.print("Toplam tutar: "+topTutar);
+            }
+            else if (yas<65){
+                indGidisDonus=tip==2?tutar*0.20:0;
+                topTutar=(tutar-indGidisDonus)*tip;
+                System.out.print("Toplam tutar: "+topTutar);
+            }
+            else
+            {
+                indYas=tutar*0.30;
+                indTutar=tutar-indYas;
+                indGidisDonus= tip==2?indTutar*0.20:0;
+                topTutar=(indTutar-indGidisDonus)*tip;
+                System.out.print("Toplam tutar: "+topTutar);
+            }
+        } else
+            System.out.print("Hatalı veri girildi");
+
+    }
+}
