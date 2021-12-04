@@ -1,0 +1,19 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int sayi,ortalama,toplam=0,adet=0;
+        System.out.print("Sayı gir: ");
+        sayi=input.nextInt();
+
+        for (int i=0;i<=sayi;i++)
+            if (i%3==0&&i%4==0) {
+                toplam = toplam + i;
+                adet++;
+            }
+        adet=adet-1;
+        ortalama=toplam/adet;
+        System.out.print("Toplam: "+toplam+" Adet: "+adet+" Ortalama: "+ortalama);
+    }
+}
