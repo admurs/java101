@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int toplam=0,sayi;
+        boolean tek;
+
+        do {
+            System.out.print("Sayı gir: ");
+            sayi=input.nextInt();
+            if (sayi%2==0&&sayi%4==0)
+                toplam=toplam+sayi;
+            tek=sayi%2==1;
+        }while (!tek);
+        System.out.print("Toplam: "+toplam);
+    }
+}
