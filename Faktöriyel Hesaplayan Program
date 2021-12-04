@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n, r, nToplam = 1, rToplam = 1,nrToplam=1,kombinasyon;
+
+        System.out.print("n gir: ");
+        n = input.nextInt();
+        System.out.print("r gir: ");
+        r = input.nextInt();
+
+        for (int i = 1; i <= n; i++)
+            nToplam = nToplam * i;
+        for (int k = 1; k <= r; k++)
+            rToplam = rToplam * k;
+        for (int j = 1; j <= (n-r); j++)
+            nrToplam = nrToplam * j;
+
+        kombinasyon=nToplam/(rToplam*nrToplam);
+
+        System.out.println("C("+n+","+r+"): "+kombinasyon);
+    }
+}
