@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int taban,us,toplam=1;
+        System.out.print("Taban gir: ");
+        taban=input.nextInt();
+        System.out.print("Üs gir: ");
+        us=input.nextInt();
+
+        for (int i=1;i<=us;i++)
+            toplam=toplam*taban;
+
+        System.out.print(taban+"^"+us+"= "+toplam);
+    }
+}
