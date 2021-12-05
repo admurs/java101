@@ -3,30 +3,29 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        int sayi,basamakAdet=0,basamak,gecici,basamakTop=0,tabanUs;
-        System.out.print("Sayı gir: ");
-        sayi=input.nextInt();
 
-        gecici=sayi;
-        while (sayi!=0) {
-            sayi = sayi / 10;
-            basamakAdet++;
-        }
-        sayi=gecici;
-        while (sayi!=0){
-            basamak=sayi%10;
-            tabanUs=1;
-            for (int i=1;i<=basamakAdet;i++){
-                tabanUs=tabanUs*basamak;
+        for (int i=1;i<=999;i++) {
+            int sayi=i,basamakAdet=0,basamak,gecici,basamakTop=0,tabanUs;
+
+            gecici = i;
+            while (sayi != 0) {
+                sayi = sayi / 10;
+                basamakAdet++;
             }
-            basamakTop=basamakTop+tabanUs;
-            sayi=sayi/10;
-        }
-        if (gecici==basamakTop)
-            System.out.print("Amstrong sayıdır.");
-        else
-            System.out.print("Amstrong sayı değildir.");
+            sayi = gecici;
+            while (sayi != 0) {
+                basamak = sayi % 10;
+                tabanUs = 1;
+                for (int k = 1; k <= basamakAdet; k++) {
+                    tabanUs = tabanUs * basamak;
+                }
+                basamakTop = basamakTop + tabanUs;
+                sayi = sayi / 10;
+            }
+            if (gecici == basamakTop)
+                System.out.println(i+" Amstrong sayıdır.");
 
+        }
         /*
         //Ödev
         //Bir sayının basamak sayılarının toplamını hesaplayan program yazınız.
