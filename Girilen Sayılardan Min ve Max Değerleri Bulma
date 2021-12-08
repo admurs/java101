@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int adet, sayi, eb = 0, ek = 0;
+        System.out.print("Kaç tane sayı gireceksiniz: ");
+        adet = input.nextInt();
+        for (int i = 1; i <= adet; i++) {
+            System.out.print(i + " sayıyı gir: ");
+            sayi = input.nextInt();
+            if (sayi > eb) {
+                if (ek==0)
+                    ek=sayi;
+                eb = sayi;
+            }
+            else if (sayi < ek)
+                ek = sayi;
+        }
+        System.out.println("En büyük sayı: " + eb);
+        System.out.println("En büyük sayı: " + ek);
+    }
+}
