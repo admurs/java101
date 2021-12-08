@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int basamak;
+        System.out.print("Basamak sayısı: ");
+        basamak = input.nextInt();
+
+        for (int i = 0; i < basamak; i++) {
+            for (int k = 0; k < i; k++)
+                System.out.print(" ");
+
+            for (int j = 1; j < (2 * basamak - (2 * i)); j++)
+                System.out.print("*");
+
+            System.out.println();
+        }
+    }
+}
