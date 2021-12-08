@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        int n1, n2, k = 1, ebob = 0, ekok = 0;
+        
+        do {
+            System.out.print("n1 sayı gir: ");
+            n1 = input.nextInt();
+            System.out.print("n2 sayı gir: ");
+            n2 = input.nextInt();
+            int i = n1;
+            while (n1 >= 1) {
+                if (n1 % i == 0 && n2 % i == 0) {
+                    ebob = i;
+                    break;
+                }
+                i--;
+            }
+            while (k < n1) {
+                ekok = (n1 * n2) / ebob;
+                k++;
+            }
+        } while (n1 > n2);
+        System.out.println("Ebob: " + ebob);
+        System.out.println("Ekok: " + ekok);
+    }
+}
