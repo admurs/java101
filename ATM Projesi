@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        int hak = 3, secim, bakiye = 1500, tutar;
+
+        while (hak > 0) {
+            System.out.print("Kullanıcı gir: ");
+            String kullanici = input.nextLine();
+            System.out.print("Şifre gir: ");
+            String sifre = input.nextLine();
+            if (kullanici.equals("adem") && sifre.equals("123")) {
+                do {
+                    System.out.print("1-Para yatırma\n" +
+                            "2-Para çekme\n" +
+                            "3-Bakiye sorgulama\n" +
+                            "4-Çıkış\n" +
+                            "İşlem tipinizi seçiniz: ");
+                    secim = input.nextInt();
+                    switch (secim) {
+                        case 1:
+                            System.out.print("Yatırmak istediğiniz tutar: ");
+                            tutar = input.nextInt();
+                            bakiye = bakiye + tutar;
+                            break;
+                        case 2:
+                            System.out.print("Çekme istediğiniz tutar: ");
+                            tutar = input.nextInt();
+                            if (tutar > bakiye) {
+                                System.out.println("Bakiye yetersiz.");
+                            } else {
+                                bakiye = bakiye - tutar;
+                            }
+                            break;
+                        case 3:
+                            System.out.println("Bakiyeniz: " + bakiye);
+                            break;
+                    }
+                } while (secim != 4);
+                System.out.print("İyi günler dileriz.");
+                break;
+            } else {
+                hak--;
+                if (hak == 0) {
+                    System.out.println("Hesabınız bloke olmuştur.");
+                } else {
+                    System.out.println("Hatalı kullanıcı/şifre. Kalan hak: " + hak);
+                }
+            }
+        }
+    }
+}
