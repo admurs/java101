@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        
+        int a = 1, b = 1, c, fibo;
+        System.out.print("Fibonacci aralığı gir: ");
+        fibo = input.nextInt();
+        if (fibo == 3)
+            System.out.print("0 " + a + " " + b);
+        else {
+            System.out.print("0 " + a + " " + b);
+            for (int i = 3; i < fibo; i++) {
+                c = a + b;
+                a = b;
+                b = c;
+                System.out.print(" " + c);
+            }
+        }
+    }
+}
