@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Main {
+    static int us(int taban,int us){
+        /*us(2,4)
+        return 2*us(2,3)=16
+         return 2*us(2,2)=8
+          return 2*us(2,1)=4
+           return 2*us(2,0)=2*/
+        if (us==0)
+            return 1;
+        else
+            return taban * us(taban, us - 1);
+    }
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Taban gir: ");
+        int taban=input.nextInt();
+        System.out.print("Üs gir: ");
+        int us=input.nextInt();
+        System.out.println("Sonuç: "+ us(taban,us));
+    }
+}
