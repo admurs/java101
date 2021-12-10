@@ -1,0 +1,135 @@
+import java.util.Scanner;
+
+public class Main {
+
+    static int toplam(int a, int b) {
+        int sonuc = a + b;
+        System.out.println("=========\n"
+                + "Toplam: " + sonuc
+                + "\n=========");
+        return sonuc;
+    }
+
+    static int cikarma(int a, int b) {
+        int sonuc = a - b;
+        System.out.println("=========\n"
+                + "Çıkarma: " + sonuc
+                + "\n=========");
+        return sonuc;
+    }
+
+    static int carpma(int a, int b) {
+        int sonuc = a * b;
+        System.out.println("=========\n"
+                + "Çarpma: " + sonuc
+                + "\n=========");
+        return sonuc;
+    }
+
+    static double bolme(double a, double b) {
+        if (b != 0) {
+            double sonuc = a / b;
+            System.out.println("=========\n"
+                    + "Bölme: " + sonuc
+                    + "\n=========");
+            return sonuc;
+        } else {
+            System.out.println("=========\n" +
+                    "Sıfıra bölünemez"
+                    + "\n=========");
+            return 0;
+        }
+    }
+
+    static int us(int a, int b) {
+        int sonuc = 1;
+        for (int i = 1; i <= b; i++) {
+            sonuc *= a;
+        }
+        System.out.println("=========\n"
+                + "Üs: " + sonuc
+                + "\n=========");
+        return sonuc;
+    }
+
+    static int fakt(int a) {
+        int sonuc = 1;
+        for (int i = 1; i <= a; i++)
+            sonuc = sonuc * i;
+
+        System.out.println("=========\n"
+                + "Faktöriyel: " + sonuc
+                + "\n=========");
+        return sonuc;
+    }
+
+    static int mod(int a, int b) {
+        int sonuc = a % b;
+        System.out.println("=========\n"
+                + "Mod: " + sonuc
+                + "\n=========");
+        return sonuc;
+    }
+
+    static void dortgen(int a, int b) {
+        System.out.println("=========\n"
+                + "Çevresi: " + (2 * (a + b))
+                + "\nAlanı: " + (a * b)
+                + "\n=========");
+    }
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int secim, a , b ;
+        String menu = "1- Toplama İşlemi\n" +
+                "2- Çıkarma İşlemi\n" +
+                "3- Çarpma İşlemi\n" +
+                "4- Bölme işlemi\n" +
+                "5- Üslü Sayı Hesaplama\n" +
+                "6- Faktoriyel Hesaplama(Sadece 1.Sayı dikkate alınacaktır!)\n" +
+                "7- Mod Alma\n" +
+                "8- Dikdörtgen Alan ve Çevre Hesabı\n" +
+                "0- Çıkış\n" +
+                "İşlem tipini seçiniz: ";
+
+        while (true) {
+            System.out.print(menu);
+            secim = input.nextInt();
+            if (secim == 0)
+                break;
+
+                System.out.print("1.sayı gir: ");
+                a = input.nextInt();
+                System.out.print("2.sayı gir: ");
+                b = input.nextInt();
+
+            switch (secim) {
+                case 1:
+                    toplam(a, b);
+                    break;
+                case 2:
+                    cikarma(a, b);
+                    break;
+                case 3:
+                    carpma(a, b);
+                    break;
+                case 4:
+                    bolme(a, b);
+                    break;
+                case 5:
+                    us(a, b);
+                    break;
+                case 6:
+                    fakt(a);
+                    break;
+                case 7:
+                    mod(a, b);
+                    break;
+                case 8:
+                    dortgen(a, b);
+                    break;
+            }
+        }
+        System.out.println("Çıkış yapılmıştır.");
+    }
+}
