@@ -128,6 +128,9 @@ public class Main {
                 case 8:
                     dortgen(a, b);
                     break;
+                default:
+                    System.out.println("Hatalı değer girildi");
+                    break;
             }
         }
         System.out.println("Çıkış yapılmıştır.");
