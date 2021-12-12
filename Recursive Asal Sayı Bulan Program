@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Main {
+    static int asal(int x,int i) {
+        if (x<2)
+            return 0;
+        if (i==1)
+            return 1;
+        if (x%i==0)
+            return 0;
+        return asal(x,i-1);
+    }
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Sayı gir: ");
+        int sayi = input.nextInt();
+        int sonuc=asal(sayi,sayi/2);
+
+        if (sonuc==0)
+            System.out.println(sayi+" sayısı asal değildir");
+
+        else
+            System.out.println(sayi+" sayısı asaldır");
+    }
+}
