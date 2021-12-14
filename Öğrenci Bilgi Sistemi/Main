@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        Teacher t1 = new Teacher("Mahmut Hoca", "555", "TRH");
+        Teacher t2 = new Teacher("Grahm Bell", "666", "FZK");
+        Teacher t3 = new Teacher("Kül Yutmaz", "777", "BIO");
+
+        Course tarih = new Course("Tarih", "101", "TRH");
+        tarih.addTeacher(t1);
+        Course fizik = new Course("Fizik", "102", "FZK");
+        fizik.addTeacher(t2);
+        Course biyoloji = new Course("Biyoloji", "103", "BIO");
+        biyoloji.addTeacher(t3);
+
+        Student s1=new Student("İnek Şaban","123","4",tarih,fizik,biyoloji);
+        s1.addBulkExamNote(60,60,60,90,90,90);
+
+        s1.isPass();
+
+        Student s2=new Student("Güdük Necmi","567","4",tarih,fizik,biyoloji);
+        s2.addBulkExamNote(50,30,78,100,100,100);
+
+        s2.isPass();
+    }
+}
