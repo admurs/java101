@@ -1,0 +1,12 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        Employee emp1=new Employee("Adem",2000,45,1985);
+        emp1.tax();
+        emp1.bonus();
+        emp1.raiseSalary();
+        emp1.string();
+    }
+}
