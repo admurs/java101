@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner input=new Scanner(System.in);
+        int rnd=(int)(Math.random()*100);
+        int sayi=0,sayac=1;
+        if (rnd==sayi){
+            rnd=(int)(Math.random()*100);
+        }
+        System.out.println(rnd);
+        while (sayi!=rnd){
+            System.out.print("Tahmininizi girin: ");
+            sayi= input.nextInt();
+            if (sayi<0||sayi>100){
+                System.out.println("0-100 arası geçerli bir sayı giriniz");
+                continue;
+            }
+            if (sayi==rnd){
+                System.out.println("Tebrikler! "+sayac+". adımda bildiniz.");
+            }
+            else if (sayi>rnd){
+                System.out.println("Daha KÜÇÜK bir sayı tahmin ediniz.");
+            }
+            else {
+                System.out.println("Daha BÜYÜK bir sayı tahmin ediniz.");
+            }
+            sayac++;
+        }
+    }
+}
